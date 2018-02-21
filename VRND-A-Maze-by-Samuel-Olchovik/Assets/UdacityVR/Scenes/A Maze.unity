@@ -52,11 +52,11 @@ LightmapSettings:
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 9
     m_Resolution: 2
-    m_BakeResolution: 5
+    m_BakeResolution: 10
     m_TextureWidth: 1024
     m_TextureHeight: 1024
     m_AO: 1
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_LightingDataAsset: {fileID: 112000556, guid: 8791f964360ea480fbd924d7a7018cf2,
+  m_LightingDataAsset: {fileID: 112000002, guid: 8791f964360ea480fbd924d7a7018cf2,
     type: 2}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -2376,6 +2376,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -7111,7 +7121,7 @@ GameObject:
   - component: {fileID: 573226740}
   - component: {fileID: 573226739}
   m_Layer: 5
-  m_Name: Text
+  m_Name: UIText_Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7124,7 +7134,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573226737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 22, z: -0}
+  m_LocalPosition: {x: -20, y: 15, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 624350884}
@@ -7132,7 +7142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20, y: 22}
+  m_AnchoredPosition: {x: -20, y: 15}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573226739
@@ -7148,7 +7158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7165,9 +7175,9 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Key_Text
 --- !u!222 &573226740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7522,13 +7532,14 @@ GameObject:
   - component: {fileID: 624350887}
   - component: {fileID: 624350886}
   - component: {fileID: 624350885}
+  - component: {fileID: 624350888}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &624350884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7540,6 +7551,7 @@ RectTransform:
   m_LocalScale: {x: 0.04716599, y: 0.04716595, z: 0.04716595}
   m_Children:
   - {fileID: 573226738}
+  - {fileID: 1182649238}
   m_Father: {fileID: 734385777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7605,6 +7617,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &624350888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624350883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526c4c1c04c46ed4096f525fc85127fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIKeyText: {fileID: 573226739}
+  UICoinText: {fileID: 1182649239}
 --- !u!1001 &624974566
 Prefab:
   m_ObjectHideFlags: 0
@@ -9555,6 +9580,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -12138,6 +12173,80 @@ Transform:
   m_PrefabParentObject: {fileID: 4794724579956752, guid: c8704fb82bf594549987fc9d33e186de,
     type: 2}
   m_PrefabInternal: {fileID: 1182013019}
+--- !u!1 &1182649237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1182649238}
+  - component: {fileID: 1182649240}
+  - component: {fileID: 1182649239}
+  m_Layer: 5
+  m_Name: UIText_Coins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1182649238
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182649237}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 20, y: 15, z: 0.000020219552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 624350884}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 20, y: 15}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1182649239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182649237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 3
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Coins_Text
+--- !u!222 &1182649240
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182649237}
 --- !u!1001 &1182950667
 Prefab:
   m_ObjectHideFlags: 0
@@ -13041,6 +13150,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -14196,6 +14315,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -14583,6 +14712,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -16977,7 +17116,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4690574637175170, guid: 111654ac6051e4d0aa5c3b534c180677, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.73
+      value: -24.887
       objectReference: {fileID: 0}
     - target: {fileID: 4690574637175170, guid: 111654ac6051e4d0aa5c3b534c180677, type: 2}
       propertyPath: m_LocalPosition.y
@@ -16985,7 +17124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4690574637175170, guid: 111654ac6051e4d0aa5c3b534c180677, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 21.25
+      value: 63.48
       objectReference: {fileID: 0}
     - target: {fileID: 4690574637175170, guid: 111654ac6051e4d0aa5c3b534c180677, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17045,6 +17184,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1037685381140026, guid: a95238af53babb14580f927a88111382,
         type: 2}
+    - target: {fileID: 114841200866888688, guid: 111654ac6051e4d0aa5c3b534c180677,
+        type: 2}
+      propertyPath: UIText_Key
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 111654ac6051e4d0aa5c3b534c180677, type: 2}
   m_IsPrefabParent: 0
@@ -21121,6 +21265,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0
@@ -21829,7 +21983,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 19.85
+      value: 128.51
       objectReference: {fileID: 0}
     - target: {fileID: 498412, guid: 970dd4b9371394fb4890965f608d46fd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -22893,6 +23047,16 @@ Prefab:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: coinUpdateText
+      value: 
+      objectReference: {fileID: 624350888}
+    - target: {fileID: 114806526123376102, guid: 02dc7d66da318204f8bb21b011ecd0b9,
+        type: 2}
+      propertyPath: UIText_Coin
+      value: 
+      objectReference: {fileID: 624350888}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 02dc7d66da318204f8bb21b011ecd0b9, type: 2}
   m_IsPrefabParent: 0

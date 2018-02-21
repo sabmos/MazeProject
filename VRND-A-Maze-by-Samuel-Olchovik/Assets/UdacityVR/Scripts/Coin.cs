@@ -5,8 +5,10 @@ using UnityEngine;
 public class Coin : MonoBehaviour 
 {
     //Create a reference to the CoinPoofPrefab
-	public GameObject coin;
 	public GameObject coinPoof;
+	public UITextUpdate UIText_Coin;
+
+	public GameObject coin;
 
     public void OnCoinClicked() {
         // Instantiate the CoinPoof Prefab where this coin is located
@@ -15,6 +17,7 @@ public class Coin : MonoBehaviour
         // Destroy this coin. Check the Unity documentation on how to use Destroy
 		Destroy (coin);
 
-
+		// Run the cointUpdateText method in the UITextUpdate class
+		UIText_Coin.addCoin ();
     }
 }

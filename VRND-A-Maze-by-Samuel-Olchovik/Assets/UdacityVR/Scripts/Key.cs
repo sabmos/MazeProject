@@ -8,6 +8,7 @@ public class Key : MonoBehaviour
 	public GameObject keyPoofPrefab;
 	public Door door;
 	public GameObject key;
+	public UITextUpdate UIText_Key;
 
 	bool keyCollected = false;
 
@@ -24,6 +25,9 @@ public class Key : MonoBehaviour
         // Make sure the poof animates vertically
         // Call the Unlock() method on the Door
 		door.Unlock();
+
+		// Call the UIText_Key class foundKey() method to update the UI to show that we have a key
+		UIText_Key.foundKey();
 
         // Set the Key Collected Variable to true
 		keyCollected = true;
